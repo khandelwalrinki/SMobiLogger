@@ -8,8 +8,23 @@
 
 #import <Foundation/Foundation.h>
 
+#ifdef DEBUG
+#define NSLog(args...) ExtendNSLogInfo(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
+#define NSLogError(args...) ExtendNSLogError(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
+#define NSLogWarning(args...) ExtendNSLogWarning(__FILE__,__LINE__,__PRETTY_FUNCTION__,args);
+
+#else
+#define NSLog(x...)
+#endif
+
+void ExtendNSLogInfo(const char *file, int lineNumber, const char *functionName, NSString *message, ...);
+void ExtendNSLogError(const char *file, int lineNumber, const char *functionName, NSString *message, ...);
+void ExtendNSLogWarning(const char *file, int lineNumber, const char *functionName, NSString *message, ...);
+
+
+
 @interface SMobiLogger : NSObject {
-	dispatch_queue_t queue_;
+    dispatch_queue_t queue_;
 }
 // To create a sigelton object
 + (SMobiLogger *)sharedInterface;

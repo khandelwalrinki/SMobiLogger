@@ -8,7 +8,6 @@
 
 #import "SMobiLogger.h"
 #import "SLog.h"
-
 #import "LoggerConstants.h"
 #import <MessageUI/MFMailComposeViewController.h>
 #include <sys/sysctl.h>
@@ -56,6 +55,7 @@
 
 - (id)init {
     self = [super init];
+    convertintoC(self);
     
     if (self) {
         queue_ = dispatch_queue_create("com.Systango.SMobiLogger", NULL);
@@ -377,6 +377,13 @@
         return _persistentStoreCoordinator;
     }
     
+    if (![NSThread currentThread].isMainThread) {
+        dispatch_sync(dispatch_get_main_queue(), ^{
+            (void)[self persistentStoreCoordinator];
+        });
+        return _persistentStoreCoordinator;
+    }
+    
     NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:[SMobiLogger databaseFilename]];
     NSLog(@"SMobiLogger directory Path: %@", [storeURL path]);
     
@@ -425,4 +432,80 @@
 //    }
 //    [controller dismissViewControllerAnimated:YES completion:nil];
 //}
+
+#pragma mark - Extended log
+
+id object;
+id detailDescriptionMessage;
+
+void convertintoC(id self)
+{
+    object = self;
+}
+
+void ExtendNSLog(const char *file, int lineNumber, const char *functionName, NSString *format, ...)
+{
+    // Type to hold information about variable arguments.
+    va_list ap;
+    
+    // Initialize a variable argument list.
+    va_start (ap, format);
+    
+    // NSLog only adds a newline to the end of the NSLog format if
+    // one is not already there.
+    // Here we are utilizing this feature of NSLog()
+    if (![format hasSuffix: @"\n"])
+    {
+        format = [format stringByAppendingString: @"\n"];
+    }
+    //    NSString *body = [[NSString alloc] initWithFormat:format arguments:ap];
+    // End using variable argument list.
+    va_end (ap);
+    
+    NSString *fileName = [[NSString stringWithUTF8String:file] lastPathComponent];
+    NSString *detailedMessage = [NSString stringWithFormat:@"\n %s Function Name ->(%s) Controller ->(%s:%d) ", getTime(),functionName, [fileName UTF8String],lineNumber];
+    detailDescriptionMessage = detailedMessage;
+    fprintf(stderr, "%s (%s) (%s:%d) %s", getTime(),
+            functionName, [fileName UTF8String],
+            lineNumber, [format UTF8String]);
+}
+
+char * getTime()
+{
+    time_t rawtime;
+    struct tm * timeinfo;
+    char buffer[80];
+    
+    time (&rawtime);
+    timeinfo = localtime (&rawtime);
+    
+    // see format strings above - YYYY-MM-DD HH:MM:SS
+    strftime(buffer, sizeof(buffer), "%F %T", timeinfo);
+    
+    char *time;
+    time=(char *)malloc(64);
+    strcpy(time, buffer);
+    
+    return time;
+}
+
+void ExtendNSLogError(const char *file, int lineNumber, const char *functionName, NSString *message, ...)
+{
+    ExtendNSLog(file, lineNumber, functionName, message);
+    [object error:message withDescription:detailDescriptionMessage];
+}
+
+void ExtendNSLogWarning(const char *file, int lineNumber, const char *functionName, NSString *message, ...)
+{
+    ExtendNSLog(file, lineNumber, functionName, message);
+    [object warn:message withDescription:detailDescriptionMessage];
+}
+
+void ExtendNSLogInfo(const char *file, int lineNumber, const char *functionName, NSString *message, ...)
+{
+    ExtendNSLog(file, lineNumber, functionName, message);
+    [object info:message withDescription:detailDescriptionMessage];
+}
+
+
 @end
