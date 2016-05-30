@@ -11,7 +11,7 @@
 		89B6FEE51717F83900AAAEC2 /* SMobiLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */; };
 		89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */; };
 		89B6FEF31718060C00AAAEC2 /* SMobiLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
-		89CBC516171D301D00439ED3 /* SLog.m in Sources */ = {isa = PBXBuildFile; fileRef = 89CBC515171D301D00439ED3 /* SLog.m */; };
+		EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85E06E1CFC4A170021EBA2 /* SLog.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,9 +35,9 @@
 		89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMobiLogger.m; sourceTree = "<group>"; };
 		89B6FEF21718060C00AAAEC2 /* SMobiLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMobiLogger.xcdatamodel; sourceTree = "<group>"; };
 		89CBC512171D300900439ED3 /* Lib.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Lib.plist; sourceTree = "<group>"; };
-		89CBC514171D301D00439ED3 /* SLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLog.h; sourceTree = "<group>"; };
-		89CBC515171D301D00439ED3 /* SLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLog.m; sourceTree = "<group>"; };
 		89CBC51A171D41A300439ED3 /* LoggerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerConstants.h; sourceTree = "<group>"; };
+		EE85E06D1CFC4A170021EBA2 /* SLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLog.h; sourceTree = "<group>"; };
+		EE85E06E1CFC4A170021EBA2 /* SLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLog.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -83,6 +83,8 @@
 				89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */,
 				89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */,
 				89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */,
+				EE85E06D1CFC4A170021EBA2 /* SLog.h */,
+				EE85E06E1CFC4A170021EBA2 /* SLog.m */,
 				89CBC513171D301D00439ED3 /* Model */,
 				89CBC511171D300800439ED3 /* Resources */,
 				89B6FEE21717F83900AAAEC2 /* Supporting Files */,
@@ -110,8 +112,6 @@
 		89CBC513171D301D00439ED3 /* Model */ = {
 			isa = PBXGroup;
 			children = (
-				89CBC514171D301D00439ED3 /* SLog.h */,
-				89CBC515171D301D00439ED3 /* SLog.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -142,7 +142,7 @@
 		89B6FED41717F83900AAAEC2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastUpgradeCheck = 0460;
+				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Systango;
 			};
 			buildConfigurationList = 89B6FED71717F83900AAAEC2 /* Build configuration list for PBXProject "SMobiLogger" */;
@@ -167,9 +167,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */,
 				89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */,
 				89B6FEF31718060C00AAAEC2 /* SMobiLogger.xcdatamodeld in Sources */,
-				89CBC516171D301D00439ED3 /* SLog.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -189,6 +189,7 @@
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -200,7 +201,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				VALID_ARCHS = "armv7 armv7s arm64";
@@ -224,7 +225,7 @@
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNINITIALIZED_AUTOS = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 5.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.0;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
 				VALID_ARCHS = "armv7 armv7s arm64";
