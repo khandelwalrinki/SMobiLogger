@@ -113,10 +113,17 @@
     //Get device info
     NSString *systemVersion = [[UIDevice currentDevice] systemVersion];
     
-    //Get app version
-    NSString *appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    //Get App Appversion
+    NSString * appVersion = [[NSBundle mainBundle] objectForInfoDictionaryKey: @"CFBundleShortVersionString"];
     
-    [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ :-\n", [self deviceName], systemVersion,appVersion]];
+    //Get build build
+    NSString *buildString = [[NSBundle mainBundle] objectForInfoDictionaryKey:(NSString *)kCFBundleVersionKey];
+    
+    //Get device's UUID
+    NSString* identifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
+    
+    
+    [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID : %@ :-\n", [self deviceName], systemVersion,appVersion,buildString,identifier]];
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"SLog" inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -130,6 +137,7 @@
     }
     return logString;
 }
+
 
 //To send logs via email
 - (void)sendEmailLogs:(id)controller {
