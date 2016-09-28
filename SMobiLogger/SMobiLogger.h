@@ -41,6 +41,9 @@ void ExtendNSLogWarning(const char *file, int lineNumber, const char *functionNa
 // To send logs via email
 - (void)sendEmailLogs:(id)controller;
 
+// To get device name
+- (NSString *) deviceName;
+
 // Save logs with particulare type
 - (void)debug:(NSString *)title withDescription:(NSString *)description;
 - (void)error:(NSString *)title withDescription:(NSString *)description;
