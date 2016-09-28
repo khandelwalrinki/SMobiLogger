@@ -122,8 +122,16 @@
     //Get device's UUID
     NSString* identifier = [[[UIDevice currentDevice] identifierForVendor] UUIDString];
     
+    NSString *deviceToken = [[NSUserDefaults standardUserDefaults] stringForKey:@"DeviceToken"];
     
-    [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID : %@ :-\n", [self deviceName], systemVersion,appVersion,buildString,identifier]];
+    if(deviceToken && deviceToken.length > 0)
+    {
+        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID %@ device Token : %@ :-\n", [self deviceName], systemVersion, appVersion, buildString, identifier, deviceToken]];
+    }
+    else
+    {
+        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID : %@ :-\n", [self deviceName], systemVersion, appVersion, buildString, identifier]];
+    }
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"SLog" inManagedObjectContext:self.managedObjectContext];
     NSFetchRequest *fetchRequest = [[NSFetchRequest alloc] init];
@@ -254,7 +262,15 @@
     if ([platform isEqualToString:@"iPad4,2"])      return @"5th Generation iPad (iPad Air) - Cellular";
     if ([platform isEqualToString:@"iPad4,4"])      return @"2nd Generation iPad Mini - Wifi";
     if ([platform isEqualToString:@"iPad4,5"])      return @"2nd Generation iPad Mini - Cellular";
-    if ([platform isEqualToString:@"iPad4,7"])      return @"3rd Generation iPad Mini - Wifi (model A1599)";
+    if ([platform isEqualToString:@"iPad4,7"])      return @"3rd Generation iPad Mini - Wifi (model A1599)";    
+    if ([platform isEqualToString:@"iPad4,7"])      return @"3rd Generation iPad Mini (model A1599)";
+    if ([platform isEqualToString:@"iPad4,8"])      return @"3rd Generation iPad Mini (model A1600)";
+    if ([platform isEqualToString:@"iPad4,9"])      return @"3rd Generation iPad Mini (model A1601)";
+    if ([platform isEqualToString:@"iPad5,1"])      return @"iPad Mini 4 (WiFi)";
+    if ([platform isEqualToString:@"iPad5,2"])      return @"iPad Mini 4 (LTE)";
+    if ([platform isEqualToString:@"iPad5,3"])      return @"iPad Air 2";
+    if ([platform isEqualToString:@"iPad5,4"])      return @"iPad Air 2";
+    if ([platform isEqualToString:@"iPad6,8"])      return @"iPad Pro";
     
     if ([platform isEqualToString:@"iPhone1,1"])    return @"iPhone 1G";
     if ([platform isEqualToString:@"iPhone1,2"])    return @"iPhone 3G";
@@ -273,6 +289,10 @@
     if ([platform isEqualToString:@"iPhone8,1"])    return @"iPhone 6S";
     if ([platform isEqualToString:@"iPhone8,2"])    return @"iPhone 6S Plus";
     if ([platform isEqualToString:@"iPhone8,4"])    return @"iPhone SE";
+    if ([platform isEqualToString:@"iPhone9,1"])    return @"iPhone 7 (model A1660, A1779, A1780)";
+    if ([platform isEqualToString:@"iPhone9,3"])    return @"iPhone 7 (model A1778)";
+    if ([platform isEqualToString:@"iPhone9,2"])    return @"iPhone 7 Plus (model A1661, A1785, A1786)";
+    if ([platform isEqualToString:@"iPhone9,4"])    return @"iPhone 7 Plus (model A1784)";
     
     if ([platform isEqualToString:@"i386"])
         return @"Simulator 32 bit";
