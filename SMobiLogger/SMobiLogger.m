@@ -172,8 +172,8 @@
     dispatch_async(dispatch_get_main_queue(), ^{
         [self.mailViewController dismissViewControllerAnimated:YES completion:nil];
         
-        NSString *title = @"Veromuse";
-        NSString *message = @"Log report sent successfully.";
+//        NSString *title = @"Veromuse";
+//        NSString *message = @"Log report sent successfully.";
         if (error != nil) {
             NSLog(@"Log report sending email fail with error= %@", error);
             return;
@@ -181,7 +181,8 @@
         
         if(result == MFMailComposeResultSent)
         {
-            [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
+            NSLog(@"Log report sent successfully.");
+//            [[[UIAlertView alloc] initWithTitle:title message:message delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil, nil] show];
         }
     });
 }
@@ -341,7 +342,7 @@
     // Save the context.
     NSError *error = nil;
     if (![context save:&error]) {
-        NSLog(@"Unresolved error in MobiLogger %s, %@, %@", __FUNCTION__, error, [error userInfo]);
+//        NSLog(@"Unresolved error in MobiLogger %s, %@, %@", __FUNCTION__, error, [error userInfo]);
     }
 }
 
@@ -398,7 +399,7 @@
     
     NSPersistentStoreCoordinator *coordinator = [self persistentStoreCoordinator];
     if (coordinator != nil) {
-        _managedObjectContext = [[NSManagedObjectContext alloc] init];
+        _managedObjectContext = [[NSManagedObjectContext alloc] initWithConcurrencyType:NSMainQueueConcurrencyType];
         [_managedObjectContext setPersistentStoreCoordinator:coordinator];
     }
     return _managedObjectContext;
