@@ -126,11 +126,11 @@
     
     if(deviceToken && deviceToken.length > 0)
     {
-        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID %@ device Token : %@ :-\n", [self deviceName], systemVersion, appVersion, buildString, identifier, deviceToken]];
+        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@, \nversion:%@, \nbuild:%@,\nDevice UUID:%@, \ndevice Token:%@ \n \n", [self deviceName], systemVersion, appVersion, buildString, identifier, deviceToken]];
     }
     else
     {
-        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@ with App %@ build %@ device ID : %@ :-\n", [self deviceName], systemVersion, appVersion, buildString, identifier]];
+        [logString appendString:[NSString stringWithFormat:@"Issue raised by %@/%@, \nversion:%@, \nbuild:%@,\nDevice UUID:%@ \n \n", [self deviceName], systemVersion, appVersion, buildString, identifier]];
     }
     
     NSEntityDescription *entity = [NSEntityDescription entityForName:@"SLog" inManagedObjectContext:self.managedObjectContext];
