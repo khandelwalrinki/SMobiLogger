@@ -50,6 +50,7 @@ void ExtendNSLogWarning(const char *file, int lineNumber, const char *functionNa
 - (void)info:(NSString *)title withDescription:(NSString *)description;
 - (void)other:(NSString *)title withDescription:(NSString *)description;
 - (void)warn:(NSString *)title withDescription:(NSString *)description;
+- (void)unCaughtExceptionWithDescription:(NSString*)description;
 
 // To start timer, which delete old logs
 - (void)startMobiLogger;

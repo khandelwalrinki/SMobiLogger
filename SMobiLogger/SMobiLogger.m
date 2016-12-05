@@ -222,6 +222,11 @@
     });
 }
 
+//Save logs without Queue
+- (void)unCaughtExceptionWithDescription:(NSString*)description{
+    [self saveLogWithTitle:@"Uncaught Exception" description:description logType:kError logDate:[NSDate date]];
+}
+
 #pragma mark - Private methods
 
 //Get device info
