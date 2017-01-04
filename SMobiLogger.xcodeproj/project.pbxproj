@@ -10,15 +10,17 @@
 		89B6FEE01717F83900AAAEC2 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 89B6FEDF1717F83900AAAEC2 /* Foundation.framework */; };
 		89B6FEE51717F83900AAAEC2 /* SMobiLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */; };
 		89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */; };
-		89B6FEF31718060C00AAAEC2 /* SMobiLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
 		EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85E06E1CFC4A170021EBA2 /* SLog.m */; };
+		EF51FA581E1D2E6700081A25 /* SMobiLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
+		EF51FA591E1D2EB800081A25 /* SMobiLogger.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
+		EF51FA5A1E1D2EB800081A25 /* Lib.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89CBC512171D300900439ED3 /* Lib.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
 		89B6FEDA1717F83900AAAEC2 /* CopyFiles */ = {
 			isa = PBXCopyFilesBuildPhase;
 			buildActionMask = 2147483647;
-			dstPath = "include/${PRODUCT_NAME}";
+			dstPath = include;
 			dstSubfolderSpec = 16;
 			files = (
 				89B6FEE51717F83900AAAEC2 /* SMobiLogger.h in CopyFiles */,
@@ -38,6 +40,8 @@
 		89CBC51A171D41A300439ED3 /* LoggerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerConstants.h; sourceTree = "<group>"; };
 		EE85E06D1CFC4A170021EBA2 /* SLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLog.h; sourceTree = "<group>"; };
 		EE85E06E1CFC4A170021EBA2 /* SLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLog.m; sourceTree = "<group>"; };
+		EF51FA521E1D2D7700081A25 /* SMobiBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMobiBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
+		EF51FA541E1D2D7700081A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +53,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		EF51FA4F1E1D2D7700081A25 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -56,6 +67,7 @@
 			isa = PBXGroup;
 			children = (
 				89B6FEE11717F83900AAAEC2 /* SMobiLogger */,
+				EF51FA531E1D2D7700081A25 /* SMobiBundle */,
 				89B6FEDE1717F83900AAAEC2 /* Frameworks */,
 				89B6FEDD1717F83900AAAEC2 /* Products */,
 			);
@@ -65,6 +77,7 @@
 			isa = PBXGroup;
 			children = (
 				89B6FEDC1717F83900AAAEC2 /* libSMobiLogger.a */,
+				EF51FA521E1D2D7700081A25 /* SMobiBundle.bundle */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -116,6 +129,14 @@
 			path = Model;
 			sourceTree = "<group>";
 		};
+		EF51FA531E1D2D7700081A25 /* SMobiBundle */ = {
+			isa = PBXGroup;
+			children = (
+				EF51FA541E1D2D7700081A25 /* Info.plist */,
+			);
+			path = SMobiBundle;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -136,6 +157,23 @@
 			productReference = 89B6FEDC1717F83900AAAEC2 /* libSMobiLogger.a */;
 			productType = "com.apple.product-type.library.static";
 		};
+		EF51FA511E1D2D7700081A25 /* SMobiBundle */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = EF51FA551E1D2D7700081A25 /* Build configuration list for PBXNativeTarget "SMobiBundle" */;
+			buildPhases = (
+				EF51FA4E1E1D2D7700081A25 /* Sources */,
+				EF51FA4F1E1D2D7700081A25 /* Frameworks */,
+				EF51FA501E1D2D7700081A25 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SMobiBundle;
+			productName = SMobiBundle;
+			productReference = EF51FA521E1D2D7700081A25 /* SMobiBundle.bundle */;
+			productType = "com.apple.product-type.bundle";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -144,6 +182,12 @@
 			attributes = {
 				LastUpgradeCheck = 0720;
 				ORGANIZATIONNAME = Systango;
+				TargetAttributes = {
+					EF51FA511E1D2D7700081A25 = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+					};
+				};
 			};
 			buildConfigurationList = 89B6FED71717F83900AAAEC2 /* Build configuration list for PBXProject "SMobiLogger" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -158,9 +202,22 @@
 			projectRoot = "";
 			targets = (
 				89B6FEDB1717F83900AAAEC2 /* SMobiLogger */,
+				EF51FA511E1D2D7700081A25 /* SMobiBundle */,
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		EF51FA501E1D2D7700081A25 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF51FA591E1D2EB800081A25 /* SMobiLogger.xcdatamodeld in Resources */,
+				EF51FA5A1E1D2EB800081A25 /* Lib.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		89B6FED81717F83900AAAEC2 /* Sources */ = {
@@ -169,7 +226,14 @@
 			files = (
 				EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */,
 				89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */,
-				89B6FEF31718060C00AAAEC2 /* SMobiLogger.xcdatamodeld in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		EF51FA4E1E1D2D7700081A25 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				EF51FA581E1D2E6700081A25 /* SMobiLogger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -256,6 +320,76 @@
 			};
 			name = Release;
 		};
+		EF51FA561E1D2D7700081A25 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SMobiBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = com.systango.smobilogger.SMobiBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Debug;
+		};
+		EF51FA571E1D2D7700081A25 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CODE_SIGN_IDENTITY = "-";
+				COMBINE_HIDPI_IMAGES = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				INFOPLIST_FILE = SMobiBundle/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Bundles";
+				MACOSX_DEPLOYMENT_TARGET = 10.11;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_BUNDLE_IDENTIFIER = com.systango.smobilogger.SMobiBundle;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				WRAPPER_EXTENSION = bundle;
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -276,6 +410,14 @@
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
+		};
+		EF51FA551E1D2D7700081A25 /* Build configuration list for PBXNativeTarget "SMobiBundle" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				EF51FA561E1D2D7700081A25 /* Debug */,
+				EF51FA571E1D2D7700081A25 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
 		};
 /* End XCConfigurationList section */
 
