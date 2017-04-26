@@ -29,9 +29,6 @@ void ExtendNSLogWarning(const char *file, int lineNumber, const char *functionNa
 // To create a sigelton object
 + (SMobiLogger *)sharedInterface;
 
-// Get database filename
-+ (NSString *)databaseFilename;
-
 // To delete old logs from db
 - (void)refreshLogs:(NSNumber *)fromDaysOrNil;
 

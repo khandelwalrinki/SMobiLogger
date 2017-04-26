@@ -7,13 +7,35 @@
 //
 
 #import "SLog.h"
-
+#import "SLogRealm.h"
 
 @implementation SLog
 
-@dynamic lDescription;
-@dynamic lIssueDate;
-@dynamic lTitle;
-@dynamic lType;
+- (id)initWithTitle:(NSString *)title description:(NSString *)description date:(NSDate *)date type:(NSString *)type
+{
+    self = [super init];
+    if(self)
+    {
+        _lTitle = title;
+        _lDescription = description;
+        _lIssueDate = date;
+        _lType = type;
+    }
+    
+    return self;
+}
+
+- (id)initWithRealmModel:(SLogRealm *)sLogRealm
+{
+    self = [super init];
+    if(!self) return nil;
+    
+    self.lDescription = sLogRealm.lDescription;
+    self.lIssueDate = sLogRealm.lIssueDate;
+    self.lTitle = sLogRealm.lTitle;
+    self.lType = sLogRealm.lType;
+    
+    return self;
+}
 
 @end

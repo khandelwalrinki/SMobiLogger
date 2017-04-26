@@ -7,14 +7,17 @@
 //
 
 #import <Foundation/Foundation.h>
-#import <CoreData/CoreData.h>
 
+@class SLogRealm;
 
-@interface SLog : NSManagedObject
+@interface SLog : NSObject
 
-@property (nonatomic, retain) NSString *lDescription;
-@property (nonatomic, retain) NSDate *lIssueDate;
-@property (nonatomic, retain) NSString *lTitle;
-@property (nonatomic, retain) NSString *lType;
+@property (nonatomic, copy) NSString *lDescription;
+@property (nonatomic, strong) NSDate *lIssueDate;
+@property (nonatomic, copy) NSString *lTitle;
+@property (nonatomic, copy) NSString *lType;
 
+- (id)initWithTitle:(NSString *)title description:(NSString *)description date:(NSDate *)date type:(NSString *)type;
+
+- (id)initWithRealmModel:(SLogRealm *)sLogRealm;
 @end

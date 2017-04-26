@@ -11,8 +11,10 @@
 		89B6FEE51717F83900AAAEC2 /* SMobiLogger.h in CopyFiles */ = {isa = PBXBuildFile; fileRef = 89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */; };
 		89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */; };
 		EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */ = {isa = PBXBuildFile; fileRef = EE85E06E1CFC4A170021EBA2 /* SLog.m */; };
-		EF51FA581E1D2E6700081A25 /* SMobiLogger.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
-		EF51FA591E1D2EB800081A25 /* SMobiLogger.xcdatamodeld in Resources */ = {isa = PBXBuildFile; fileRef = 89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */; };
+		EF1052431EB07C080006DE4F /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1052421EB07C080006DE4F /* Realm.framework */; };
+		EF1052471EB07DE10006DE4F /* SUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1052461EB07DE10006DE4F /* SUtil.m */; };
+		EF10524A1EB07FE30006DE4F /* SLogRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1052491EB07FE30006DE4F /* SLogRealm.m */; };
+		EF10524D1EB082610006DE4F /* SLogCollectionRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = EF10524C1EB082610006DE4F /* SLogCollectionRealm.m */; };
 		EF51FA5A1E1D2EB800081A25 /* Lib.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89CBC512171D300900439ED3 /* Lib.plist */; };
 /* End PBXBuildFile section */
 
@@ -35,11 +37,17 @@
 		89B6FEE31717F83900AAAEC2 /* SMobiLogger-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "SMobiLogger-Prefix.pch"; sourceTree = "<group>"; };
 		89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = SMobiLogger.h; sourceTree = "<group>"; };
 		89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SMobiLogger.m; sourceTree = "<group>"; };
-		89B6FEF21718060C00AAAEC2 /* SMobiLogger.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SMobiLogger.xcdatamodel; sourceTree = "<group>"; };
 		89CBC512171D300900439ED3 /* Lib.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Lib.plist; sourceTree = "<group>"; };
 		89CBC51A171D41A300439ED3 /* LoggerConstants.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoggerConstants.h; sourceTree = "<group>"; };
 		EE85E06D1CFC4A170021EBA2 /* SLog.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLog.h; sourceTree = "<group>"; };
 		EE85E06E1CFC4A170021EBA2 /* SLog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLog.m; sourceTree = "<group>"; };
+		EF1052421EB07C080006DE4F /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		EF1052451EB07DE10006DE4F /* SUtil.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SUtil.h; sourceTree = "<group>"; };
+		EF1052461EB07DE10006DE4F /* SUtil.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SUtil.m; sourceTree = "<group>"; };
+		EF1052481EB07FE30006DE4F /* SLogRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLogRealm.h; sourceTree = "<group>"; };
+		EF1052491EB07FE30006DE4F /* SLogRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLogRealm.m; sourceTree = "<group>"; };
+		EF10524B1EB082610006DE4F /* SLogCollectionRealm.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SLogCollectionRealm.h; sourceTree = "<group>"; };
+		EF10524C1EB082610006DE4F /* SLogCollectionRealm.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SLogCollectionRealm.m; sourceTree = "<group>"; };
 		EF51FA521E1D2D7700081A25 /* SMobiBundle.bundle */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SMobiBundle.bundle; sourceTree = BUILT_PRODUCTS_DIR; };
 		EF51FA541E1D2D7700081A25 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -49,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1052431EB07C080006DE4F /* Realm.framework in Frameworks */,
 				89B6FEE01717F83900AAAEC2 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -85,6 +94,7 @@
 		89B6FEDE1717F83900AAAEC2 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				EF1052421EB07C080006DE4F /* Realm.framework */,
 				89B6FEDF1717F83900AAAEC2 /* Foundation.framework */,
 			);
 			name = Frameworks;
@@ -93,11 +103,16 @@
 		89B6FEE11717F83900AAAEC2 /* SMobiLogger */ = {
 			isa = PBXGroup;
 			children = (
-				89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */,
 				89B6FEE41717F83900AAAEC2 /* SMobiLogger.h */,
 				89B6FEE61717F83900AAAEC2 /* SMobiLogger.m */,
 				EE85E06D1CFC4A170021EBA2 /* SLog.h */,
 				EE85E06E1CFC4A170021EBA2 /* SLog.m */,
+				EF1052481EB07FE30006DE4F /* SLogRealm.h */,
+				EF1052491EB07FE30006DE4F /* SLogRealm.m */,
+				EF10524B1EB082610006DE4F /* SLogCollectionRealm.h */,
+				EF10524C1EB082610006DE4F /* SLogCollectionRealm.m */,
+				EF1052451EB07DE10006DE4F /* SUtil.h */,
+				EF1052461EB07DE10006DE4F /* SUtil.m */,
 				89CBC513171D301D00439ED3 /* Model */,
 				89CBC511171D300800439ED3 /* Resources */,
 				89B6FEE21717F83900AAAEC2 /* Supporting Files */,
@@ -212,7 +227,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF51FA591E1D2EB800081A25 /* SMobiLogger.xcdatamodeld in Resources */,
 				EF51FA5A1E1D2EB800081A25 /* Lib.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -224,8 +238,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF10524A1EB07FE30006DE4F /* SLogRealm.m in Sources */,
 				EE85E06F1CFC4A170021EBA2 /* SLog.m in Sources */,
 				89B6FEE71717F83900AAAEC2 /* SMobiLogger.m in Sources */,
+				EF1052471EB07DE10006DE4F /* SUtil.m in Sources */,
+				EF10524D1EB082610006DE4F /* SLogCollectionRealm.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -233,7 +250,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				EF51FA581E1D2E6700081A25 /* SMobiLogger.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -300,6 +316,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/SMobiLogger.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMobiLogger/SMobiLogger-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -312,6 +332,10 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				DSTROOT = /tmp/SMobiLogger.dst;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "SMobiLogger/SMobiLogger-Prefix.pch";
 				OTHER_LDFLAGS = "-ObjC";
@@ -418,21 +442,9 @@
 				EF51FA571E1D2D7700081A25 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		89B6FEF11718060C00AAAEC2 /* SMobiLogger.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				89B6FEF21718060C00AAAEC2 /* SMobiLogger.xcdatamodel */,
-			);
-			currentVersion = 89B6FEF21718060C00AAAEC2 /* SMobiLogger.xcdatamodel */;
-			path = SMobiLogger.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 89B6FED41717F83900AAAEC2 /* Project object */;
 }
