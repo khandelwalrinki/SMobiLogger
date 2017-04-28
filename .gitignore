@@ -18,6 +18,7 @@ DerivedData
 *.xcuserstate
 *.DS_Store
 SMobiLogger.xcodeproj/project.xcworkspace/
+SMobiLogger/.DS_Store
 
 # CocoaPods
 #

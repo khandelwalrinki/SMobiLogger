@@ -113,7 +113,6 @@
 				EF10524C1EB082610006DE4F /* SLogCollectionRealm.m */,
 				EF1052451EB07DE10006DE4F /* SUtil.h */,
 				EF1052461EB07DE10006DE4F /* SUtil.m */,
-				89CBC513171D301D00439ED3 /* Model */,
 				89CBC511171D300800439ED3 /* Resources */,
 				89B6FEE21717F83900AAAEC2 /* Supporting Files */,
 			);
@@ -135,13 +134,6 @@
 				89CBC512171D300900439ED3 /* Lib.plist */,
 			);
 			path = Resources;
-			sourceTree = "<group>";
-		};
-		89CBC513171D301D00439ED3 /* Model */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Model;
 			sourceTree = "<group>";
 		};
 		EF51FA531E1D2D7700081A25 /* SMobiBundle */ = {

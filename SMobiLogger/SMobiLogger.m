@@ -323,7 +323,7 @@
 {
     NSString *bundlePathofPlist = [[NSBundle mainBundle]pathForResource:@"Lib" ofType:@"plist"];
     NSDictionary *dict = [NSDictionary dictionaryWithContentsOfFile:bundlePathofPlist];
-    NSString *dateRange = [dict valueForKey:@"dateRange"];
+    NSNumber *dateRange = [dict valueForKey:@"dateRange"];
     return [dateRange intValue];
 }
 
