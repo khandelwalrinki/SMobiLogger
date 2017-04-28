@@ -7,7 +7,7 @@ Pod::Spec.new do |s|
   s.license      = "MIT"
   s.author             = { "Zoeb Sheikh" => "zoeb@systango.com" }
   s.platform     = :ios, "7.0"
-  s.source       = { :git => "https://github.com/zsheikh-systango/SMobiLogger.git", :tag => s.version.to_s }
+  s.source       = { :git => "https://github.com/zsheikh-systango/SMobiLogger.git", :tag => "1.0.1" }
   s.source_files  = "SMobiLogger", "SMobiLogger/**/*.{h,m}"
   s.resources = "SMobiLogger/Resources/*"
   s.vendored_frameworks = "Realm.framework"
