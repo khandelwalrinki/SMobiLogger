@@ -15,6 +15,7 @@
 		EF1052471EB07DE10006DE4F /* SUtil.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1052461EB07DE10006DE4F /* SUtil.m */; };
 		EF10524A1EB07FE30006DE4F /* SLogRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = EF1052491EB07FE30006DE4F /* SLogRealm.m */; };
 		EF10524D1EB082610006DE4F /* SLogCollectionRealm.m in Sources */ = {isa = PBXBuildFile; fileRef = EF10524C1EB082610006DE4F /* SLogCollectionRealm.m */; };
+		EF1E56231EB37EA3004D323A /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = EF1052421EB07C080006DE4F /* Realm.framework */; };
 		EF51FA5A1E1D2EB800081A25 /* Lib.plist in Resources */ = {isa = PBXBuildFile; fileRef = 89CBC512171D300900439ED3 /* Lib.plist */; };
 /* End PBXBuildFile section */
 
@@ -66,6 +67,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EF1E56231EB37EA3004D323A /* Realm.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -354,6 +356,10 @@
 				COMBINE_HIDPI_IMAGES = YES;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -390,6 +396,10 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
